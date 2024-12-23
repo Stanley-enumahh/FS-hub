@@ -16,7 +16,7 @@ export default function Navbar() {
     >
       <div className="w-[90%] lg:w-[85%] h-fit flex flex-row justify-between items-center">
         <div className="w-fit">
-          <img src={Logo} alt="" className="w-[100px]" />
+          <img src={Logo} alt="" className="md:w-[100px] w-[50px]" />
         </div>
         <nav className="flex z-50">
           <ul
