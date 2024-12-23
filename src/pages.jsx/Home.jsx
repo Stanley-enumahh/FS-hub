@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div className="w-full h-screen flex justify-center">
       <Navbar />
-      <div className="w-[90%] flex flex-col-reverse md:flex-row gap-5  md:justify-between justify-center items-center">
+      <div className="w-[90%] flex flex-col-reverse md:flex-row gap-5  md:justify-between justify-center items-center md:mt-0 mt-[60px]">
         <div className="flex flex-col gap-4 w-full md:w-[45%] h-fit">
           <h1 className="md:text-4xl font-bold text-2xl">
             Lorem ipsum dolor sit amet consectetur adipisicing
