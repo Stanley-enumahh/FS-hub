@@ -16,13 +16,13 @@ export default function Navbar() {
     >
       <div className="w-[90%] lg:w-[85%] h-fit flex flex-row justify-between items-center">
         <div className="w-fit">
-          <img src={Logo} alt="" className="md:w-[100px] w-[50px]" />
+          <img src={Logo} alt="" className="md:w-[100px] w-[70px]" />
         </div>
         <nav className="flex z-50">
           <ul
             className={`${
-              isOpen ? "top-0" : "top-[-380%] shadow-none"
-            } flex md:flex-row md:w-fit w-full md:bg-transparent bg-[#2d4a53] left-0 flex-col md:gap-8 gap-4 top-0 text-sm md:static absolute transition-all duration-500 h-fit md:font-bold font-normal bg-primary-color z-50 lg:pl-60 md:pl-0 px-4 py-5 mt-5 md:pt-0 md:shadow-none shadow-xl select-none
+              isOpen ? "top-[-32%]" : "top-[-450%] shadow-none"
+            } flex md:flex-row md:w-fit w-full md:bg-transparent bg-[#2d4a53] left-0 flex-col md:gap-8 gap-4 text-sm md:static absolute transition-all duration-500 h-fit md:font-bold font-normal bg-primary-color z-50 lg:pl-60 md:pl-0 px-5 py-10 mt-5 md:pt-0 md:shadow-none shadow-xl select-none
                `}
           >
             <li
