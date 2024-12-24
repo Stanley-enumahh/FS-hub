@@ -10,17 +10,18 @@ export default function SignIn() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    console.log(data.password);
+
     reset();
   };
 
   return (
     <div className="flex w-full  h-screen items-center justify-center bg-[#ebebeb] ">
       <form
-        className="flex relative flex-col p-24 bg-white h-[90%] shadow-lg gap-[40px] w-[50%] rounded-md"
+        className="flex relative flex-col p-5 md:p-24 bg-white h-[90%] shadow-lg gap-[40px] md:w-[50%] w-[90%] rounded-md"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <span className="bg-green-500 left-0 absolute top-0 w-full h-[20px]"></span>
+        <span className="bg-green-500 left-0 absolute md:flex hidden top-0 w-full h-[20px]"></span>
         <div className="w-full">
           <h1 className="font-bold">SIGN IN</h1>
         </div>
