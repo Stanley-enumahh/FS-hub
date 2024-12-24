@@ -1,59 +1,29 @@
-import { useState } from "react";
 import SignUpImg from "../assets/pexels-plann-2999237-4549416_977113_CS-3021.jpg";
-import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import { useForm } from "react-hook-form";
 
 export default function SignUp() {
-  const [fullname, setFullname] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [nameError, setNameError] = useState(false);
-  const [usernameError, setUsernameError] = useState(false);
-  const [emialError, setEmailError] = useState(false);
-  const [invalidEmail, setInvalidEmail] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm();
 
-  function ErrorMessage() {
-    return <p className="text-xs text-red-600">This field is required</p>;
-  }
-
-  function InvalidEmailMessage() {
-    return <p className="text-xs text-red-600">Invalid email</p>;
-  }
-
-  function Login() {
-    if (!fullname) {
-      setNameError(true);
-    } else {
-      setNameError(false);
-    }
-    if (!username) {
-      setUsernameError(true);
-    } else {
-      setUsernameError(false);
-    }
-    if (!email) {
-      setEmailError(true);
-    } else {
-      setEmailError(false);
-    }
-    if (email.includes("@")) {
-      setInvalidEmail(false);
-    } else {
-      setInvalidEmail(true);
-    }
-    if (!password) {
-      setPasswordError(true);
-    } else {
-      setPasswordError(false);
-    }
-  }
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
 
   return (
-    <div className="w-full h-fit justify-center items-center flex">
+    <div className="w-full h-fit justify-center items-center flex md:mt-[40px]">
       <Navbar />
-      <div className="flex flex-row mt-[90px] justify-between gap-[100px] items-center w-[80%]">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-row mt-[90px] justify-between gap-[100px] items-center w-[80%]"
+      >
         <div className="md:w-[50%] w-full mt-6 md:mt-0 flex flex-col gap-7">
           <div className="flex flex-col gap-1">
             <h1 className="font-bold text-3xl">Create your account</h1>
@@ -61,59 +31,73 @@ export default function SignUp() {
           </div>
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-1">
-              {nameError && <ErrorMessage />}
               <input
-                value={fullname}
-                onChange={(e) => setFullname(e.target.value)}
+                {...register("name", { required: "name is required" })}
                 type="text"
                 placeholder="Full name"
                 className="border bg-transparent border-gray-900 w-full outline-none py-3 px-2 rounded-lg"
               />
+              <p className="text-red-500">
+                {errors.name && errors.name.message}
+              </p>
             </div>
 
             <div className="flex flex-col w-full gap-1">
-              {usernameError && <ErrorMessage />}
-
               <input
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                {...register("username", { required: "username is required" })}
                 type="text"
                 placeholder="Username"
                 className="border bg-transparent border-gray-900  outline-none py-3 px-2 rounded-lg"
               />
+              <p className="text-red-500">
+                {errors.username && errors.username.message}
+              </p>
             </div>
 
             <div className="flex flex-col gap-1 w-full">
-              {emialError && <ErrorMessage />}
-              {invalidEmail && <invalidEmailMessage />}
               <input
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                {...register("email", { required: "email is required" })}
                 type="email"
                 placeholder="Email"
                 className="border bg-transparent border-gray-900 outline-none py-3 px-2 rounded-lg"
               />
+              <p className="text-red-500">
+                {errors.email && errors.email.message}
+              </p>
             </div>
 
             <div className="flex flex-col gap-1">
-              {passwordError && <ErrorMessage />}
               <input
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                {...register("password", {
+                  required: "password is required",
+                  minLength: {
+                    value: 8,
+                    message: "password must be at least 8 characters",
+                  },
+                })}
                 type="password"
                 placeholder="Password"
                 className="border bg-transparent border-gray-900 outline-none py-3 px-2 rounded-lg"
               />
+              <p className="text-red-500">
+                {errors.password && errors.password.message}
+              </p>
             </div>
             <div className="flex flex-col gap-1">
-              {passwordError && <ErrorMessage />}
               <input
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                {...register("confirmPassword", {
+                  required: "Confirm password is required",
+                  validate: (value) =>
+                    value === getValues("password") ||
+                    "The passwords do not match",
+                })}
                 type="password"
                 placeholder="Confirm password"
                 className="border bg-transparent border-gray-900 outline-none py-3 px-2 rounded-lg"
               />
+              <p className="text-red-500">
+                {errors.confirmPassword && errors.confirmPassword.message}
+              </p>
             </div>
           </div>
           <div className="flex flex-row items-center gap-3">
@@ -127,10 +111,10 @@ export default function SignUp() {
             </label>
           </div>
           <button
-            onClick={Login}
+            type="submit"
             className="bg-blue-800 py-3 rounded-lg text-white hover:bg-blue-500 transition-all duration-200"
           >
-            <Link to="/">Sign up</Link>
+            Sign up
           </button>
           <div className="flex justify-center flex-row gap-3 mb-[50px]">
             <p className="text-xs">
@@ -147,7 +131,7 @@ export default function SignUp() {
             className="w-full object-cover rounded-xl shadow-lg"
           />
         </div>
-      </div>
+      </form>
     </div>
   );
 }

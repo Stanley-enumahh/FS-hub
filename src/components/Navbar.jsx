@@ -12,13 +12,13 @@ export default function Navbar() {
   return (
     <div
       className="
-       flex w-full h-fit top-0 justify-center py-0 z-50 text-black fixed font-ralewaay bg-[#2d4a53]"
+       flex w-full h-fit top-0 justify-center py-0 z-50 text-black fixed font-ralewaay bg-[#2d4a53] items-center"
     >
       <div className="w-[90%] lg:w-[85%] h-fit flex flex-row justify-between items-center">
         <div className="w-fit">
           <img src={Logo} alt="" className="md:w-[100px] w-[70px]" />
         </div>
-        <nav className="flex z-50">
+        <nav className="flex z-50 ">
           <ul
             className={`${
               isOpen ? "top-[-32%]" : "top-[-450%] shadow-none"
@@ -49,7 +49,7 @@ export default function Navbar() {
               onClick={handleIsOpen}
               className="md:hover:text-primary-color transition-all duration-150 text-white text-lg md:text-sm md:flex text-nowrap hover:text-green-300 cursor-pointer"
             >
-              <Link to="/SignUp"> SignOut</Link>
+              <Link to="/Sign-in"> Sign in</Link>
             </li>
           </ul>
         </nav>
