@@ -1,11 +1,11 @@
 export default function HowItWorks() {
   return (
     <div className="flex jusitfy-center items-center gap-8 flex-col w-full h-fit md:h-screen">
-      <div className="flex flex-col gap-2 text-center ">
-        <h1 className="font-bold md:text-2xl text-lg">
+      <div className="flex flex-col gap-1 md:gap-2 text-center ">
+        <h1 className="font-bold md:text-2xl text-2xl">
           How FSengage Hub works?
         </h1>
-        <p className="md:text-sm text-xs text-[#2d4a53]">
+        <p className="text-sm">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
       </div>
@@ -28,12 +28,12 @@ function StepList() {
 
 function Step({ step }) {
   return (
-    <li className="flex flex-row gap-4 px-3 w-full md:w-[350px] h-[150px] items-center hover:border-green-600 hover:border rounded-md duration-200 cursor-pointer transition-all">
+    <li className="flex flex-row gap-4 px-3 w-full md:w-[350px] h-[150px] items-center hover:border-[#222140] hover:border rounded-md duration-200 cursor-pointer transition-all">
       <p
         className={`${
           step.bg
-            ? "bg-green-500 text-white"
-            : "border text-green-500 border-green-500"
+            ? "bg-[#222140] text-white"
+            : "border  border-bg-[#222140] border-[#222140]"
         } px-3 py-1 rounded-full text-xs"
        `}
       >

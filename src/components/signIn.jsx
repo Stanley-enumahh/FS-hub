@@ -16,12 +16,11 @@ export default function SignIn() {
   };
 
   return (
-    <div className="flex w-full  h-screen items-center justify-center bg-[#ebebeb] ">
+    <div className="flex w-full h-screen items-start md:items-center justify-center bg-[#222140] ">
       <form
-        className="flex relative flex-col p-5 md:p-24 bg-white h-[90%] shadow-lg gap-[40px] md:w-[50%] w-[90%] rounded-md"
+        className="flex relative flex-col p-5 md:p-24 bg-[#ebebeb] md:mt-0 mt-[70px] h-[500px] shadow-lg gap-[40px] md:w-[50%] w-[90%] rounded-md"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <span className="bg-green-500 left-0 absolute md:flex hidden top-0 w-full h-[20px]"></span>
         <div className="w-full">
           <h1 className="font-bold">SIGN IN</h1>
         </div>
@@ -57,15 +56,15 @@ export default function SignIn() {
             <p className="text-xs text-red-500">{errors.password.message}</p>
           )}
           <button
-            className="bg-[#2d4a53] py-5 rounded-lg text-white hover:opacity-55 transition-all duration-200"
+            className="bg-[#2d54f4] py-5 rounded-lg text-white hover:opacity-55 transition-all duration-200"
             type="submit"
           >
             Sign in
           </button>
-          <div className="w-full flex justify-center">
-            <p>
+          <div className="w-full flex items-center justify-center">
+            <p className="text-xs">
               Don't have an account?
-              <span className="underline">
+              <span>
                 <Link to="/Sign-Up"> Sign up</Link>
               </span>
             </p>

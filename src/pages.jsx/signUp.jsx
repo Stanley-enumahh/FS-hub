@@ -18,11 +18,11 @@ export default function SignUp() {
   };
 
   return (
-    <div className="w-full h-fit justify-center items-center flex md:mt-[40px]">
+    <div className="w-full bg-[#222140] h-screen justify-center items-center flex md:mt-[40px]">
       <Navbar />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-row mt-[90px] justify-between gap-[100px] items-center w-[80%]"
+        className="flex flex-row mt-3 md:rounded-none rounded-md md:mt-[90px] bg-[#ebebeb] justify-between gap-[100px] items-center w-[90%] px-5 h-fit"
       >
         <div className="md:w-[50%] w-full mt-6 md:mt-0 flex flex-col gap-7">
           <div className="flex flex-col gap-1">
@@ -112,24 +112,15 @@ export default function SignUp() {
           </div>
           <button
             type="submit"
-            className="bg-blue-800 py-3 rounded-lg text-white hover:bg-blue-500 transition-all duration-200"
+            className="bg-[#2d54f4] py-3 rounded-lg text-white hover:bg-blue-500 transition-all duration-200"
           >
             Sign up
           </button>
-          <div className="flex justify-center flex-row gap-3 mb-[50px]">
+          <div className="flex justify-center flex-row gap-3 mb-3 md:mb-[50px]">
             <p className="text-xs">
-              Have an account?{" "}
-              <span className="text-blue-900 font-bold underline">Sign in</span>
+              Have an account? <Link to="/Sign-In"> sign in</Link>
             </p>
           </div>
-        </div>
-
-        <div className="w-[35%] h-[400px] hidden md:flex">
-          <img
-            src={SignUpImg}
-            alt="hand holding a phone"
-            className="w-full object-cover rounded-xl shadow-lg"
-          />
         </div>
       </form>
     </div>
