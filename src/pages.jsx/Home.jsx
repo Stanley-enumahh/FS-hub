@@ -5,10 +5,10 @@ import { RiInstagramFill } from "react-icons/ri";
 
 export default function Hero() {
   return (
-    <div className="w-full h-fit md:h-screen  flex justify-center">
+    <div className="w-full h-screen  flex justify-center">
       <Navbar />
       <div className="w-[85%] flex justify-center md:mb-0 mb-[50px] items-center">
-        <div className="relative md:mt-0 mt-[140px] flex flex-col gap-5 w-full md:w-[80%] justify-center items-center h-fit">
+        <div className="relative flex flex-col gap-5 w-full md:w-[80%] justify-center items-center h-fit">
           <h1 className="md:text-7xl text-center font-bold text-4xl">
             Boost social <br /> reach for your brand
           </h1>

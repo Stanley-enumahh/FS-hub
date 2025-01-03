@@ -19,7 +19,6 @@ export default function SignUp() {
 
   return (
     <div className="w-full bg-[#222140] h-screen justify-center items-center flex md:mt-[40px]">
-      <Navbar />
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-row mt-3 md:rounded-none rounded-md md:mt-[90px] bg-[#ebebeb] justify-between gap-[100px] items-center w-[90%] px-5 h-fit"

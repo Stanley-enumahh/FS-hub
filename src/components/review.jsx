@@ -25,7 +25,7 @@ export function ReviewSection() {
 
 function Review({ item }) {
   return (
-    <li className="w-[80%] md:w-[60%] mt-[5%] ml-10 md:ml-[20%] h-[300px] flex flex-col justify-center items-center gap-6 text-white bg-[#222140] p-5 rounded-lg">
+    <li className="w-[83%] md:w-[60%] mt-[5%] ml-10 md:ml-[20%] h-[300px] flex flex-col justify-center items-center gap-2 md:gap-6 text-white bg-[#222140] p-5 rounded-lg">
       <p>{item.name}</p>
       <p className="text-sm md:text-lg text-center">{item.testimony}</p>
       <p className="text-sm">{item.title}</p>
